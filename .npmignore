@@ -1,0 +1,29 @@
+# Source code
+src/
+
+# Configuration files
+tsconfig.json
+jest.config.js
+.gitignore
+
+# Test files
+**/*.test.ts
+**/*.spec.ts
+coverage/
+
+# Development scripts
+setup.sh
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
