@@ -1,6 +1,6 @@
-# MD5-MCP: MD5 Hash Calculator MCP Server
+# MD5-MCP: MD5 Hash Calculator MCP Provider
 
-A Model Context Protocol (MCP) server for calculating MD5 hashes from various data types. This server provides tools to calculate MD5 hashes from strings, JSON data, and base64-encoded binary data.
+A Model Context Protocol (MCP) provider for calculating MD5 hashes from various data types. This provider provides tools to calculate MD5 hashes from strings, JSON data, and base64-encoded binary data.
 
 ## Features
 
@@ -16,21 +16,21 @@ A Model Context Protocol (MCP) server for calculating MD5 hashes from various da
 
 ```bash
 # Install globally
-npm install -g md5-mcp-server
+npm install -g md5-mcp
 
-# Run the server directly
-md5-mcp-server
+# Run the provider directly
+md5-mcp
 ```
 
 ### Local Installation
 
 ```bash
 # Install locally in your project
-npm install md5-mcp-server
+npm install md5-mcp
 
 # Add to your package.json scripts
 # "scripts": {
-#   "start-md5-server": "md5-mcp-server"
+#   "start-md5": "md5-mcp"
 # }
 ```
 
@@ -47,27 +47,27 @@ npm install
 # Build the project
 npm run build
 
-# Start the server
+# Start the provider
 npm start
 ```
 
 ## Usage
 
-### Starting the server
+### Starting the provider
 
 If installed globally:
 
 ```bash
-md5-mcp-server
+md5-mcp
 ```
 
 If installed locally:
 
 ```bash
-npx md5-mcp-server
+npx md5-mcp
 ```
 
-This will start the MCP server using the stdio transport, which allows it to be used with MCP clients like Claude for Desktop.
+This will start the MCP provider using the stdio transport, which allows it to be used with MCP clients like Claude for Desktop.
 
 ### Configuring with Claude for Desktop
 
@@ -78,7 +78,7 @@ Add the following to your Claude for Desktop configuration:
     "mcpServers": {
         "md5-calculator": {
             "command": "npx",
-            "args": ["md5-mcp-server"]
+            "args": ["md5-mcp"]
         }
     }
 }
@@ -90,7 +90,7 @@ If you installed globally, you can simplify to:
 {
     "mcpServers": {
         "md5-calculator": {
-            "command": "md5-mcp-server"
+            "command": "md5-mcp"
         }
     }
 }
@@ -156,10 +156,10 @@ You can also use this package programmatically in your Node.js applications:
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 
-// Create a transport that starts the server as a child process
+// Create a transport that starts the provider as a child process
 const transport = new StdioClientTransport({
     command: "npx",
-    args: ["md5-mcp-server"],
+    args: ["md5-mcp"],
 });
 
 // Create a client
@@ -168,7 +168,7 @@ const client = new Client(
     { capabilities: { resources: {}, prompts: {}, tools: {} } }
 );
 
-// Connect to the server
+// Connect to the provider
 await client.connect(transport);
 
 // Calculate MD5 hash

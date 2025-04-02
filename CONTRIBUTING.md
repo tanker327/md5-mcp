@@ -1,11 +1,11 @@
-# Contributing to MD5-MCP Server
+# Contributing to MD5-MCP Provider
 
-Thank you for considering contributing to the MD5-MCP Server project! This document outlines the process for contributing to this project.
+Thank you for considering contributing to the MD5-MCP Provider project! This document outlines the process for contributing to this project.
 
 ## Getting Started
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/YOUR_USERNAME/md5-mcp-server.git`
+2. Clone your fork: `git clone https://github.com/YOUR_USERNAME/md5-mcp.git`
 3. Install dependencies: `npm install`
 4. Build the project: `npm run build`
 5. Run tests: `npm test`
@@ -22,12 +22,12 @@ Thank you for considering contributing to the MD5-MCP Server project! This docum
 ## Project Structure
 
 ```
-md5-mcp-server/
+md5-mcp/
 ├── bin/            # Binary executable files
 ├── dist/           # Compiled JavaScript (generated)
 ├── examples/       # Example usage
 ├── src/            # TypeScript source files
-│   ├── index.ts    # Main server entry point
+│   ├── index.ts    # Main provider entry point
 │   └── tests/      # Test files
 ├── .gitignore      # Git ignore file
 ├── .npmignore      # NPM ignore file
